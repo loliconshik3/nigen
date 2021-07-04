@@ -1,33 +1,33 @@
-<h1 align="center">Nick Generator</h1>
+<h1 align="center">nigen</h1>
 <h2 align="center">by loliconshik3</h2>
 
-# Описание
+# Description
 
-Генератор случайных никнеймов.
+Random nickname generator.
 
-# Возможности
+# Features
 
-* Выбор между женским и мужским никами.
+* Choice between male and female nicks.
 
-* Создание ника из случайных символов.
+* Create nicks from random chars.
 
-* Выбор кол-ва ников.
+* Choice count of nicks.
 
-* Выбор длины ников из случайных символов.
+* Choice length of nicks.
 
-# Примеры использования
+# Examples
 
-Мужской ник:
+Male nick:
 ```
-Выберите что хотите получить:
-1. Мужской ник.
-2. Женский ник.
-3. Ник из случайных букв.
-4. Выход.
+Please, choice:
+1. Male nick.
+2. Female nick.
+3. Nick from random chars.
+4. Exit.
 
 1
 
-Сколько никнеймов вы хотите получить?
+How many nicks you want?
 
 3
 
@@ -36,17 +36,17 @@
 3. TIGRAN-85
 ```
 
-Женский ник:
+Female nick:
 ```
-Выберите что хотите получить:
-1. Мужской ник.
-2. Женский ник.
-3. Ник из случайных букв.
-4. Выход.
+Please, choice:
+1. Male nick.
+2. Female nick.
+3. Nick from random chars.
+4. Exit.
 
 2
 
-Сколько никнеймов вы хотите получить?
+How many nicks you want?
 
 4
 
@@ -56,21 +56,21 @@
 4. dbcrfc
 ```
 
-Ник из случайных символов:
+Nick from random chars:
 ```
-Выберите что хотите получить:
-1. Мужской ник.
-2. Женский ник.
-3. Ник из случайных букв.
-4. Выход.
+Please, choice:
+1. Male nick.
+2. Female nick.
+3. Nick from random chars.
+4. Exit.
 
 3
 
-Сколько никнеймов вы хотите получить?
+How many nicks you want?
 
 4
 
-Введите длину ника.
+Choice nicks length.
 
 7
 

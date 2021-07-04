@@ -24,11 +24,11 @@ def RandomNick(length: int):
 
     return s
 
-def NickGenerator():
-    choice = input("Выберите что хотите получить:\n1. Мужской ник.\n2. Женский ник.\n3. Ник из случайных букв.\n4. Выход.\n")
+def nigen():
+    choice = input("Please, choice:\n1. Male nick.\n2. Female nick.\n3. Nick from random chars.\n4. Exit.\n")
     if (choice == "4"):
         exit()
-    limit = int(input("\nСколько никнеймов вы хотите получить?\n"))
+    limit = int(input("\nHow many nicks you want?\n"))
     file = ''; i = 1
 
     print('\n')
@@ -38,7 +38,7 @@ def NickGenerator():
         file = 'girl_users.txt'
 
     elif (choice == "3"):
-        length = int(input('\nВведите длину ника.\n'))
+        length = int(input('\nChoice nick length.\n'))
         while limit >= i:
             nick = RandomNick(length)
             print(f"{i}. {nick}")
@@ -52,7 +52,7 @@ def NickGenerator():
             print(f"{i}. {nick}")
             i += 1
 
-    NickGenerator()
+    nigen()
 
-print("Приветствую вас в утилите NickGenerator.\n")
-NickGenerator()
+print("nigen is loading...\n")
+nigen()
