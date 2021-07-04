@@ -1,3 +1,4 @@
+from pyfzf.pyfzf import FzfPrompt
 import random
 
 def RandomNick(length: int):
@@ -25,34 +26,47 @@ def RandomNick(length: int):
     return s
 
 def nigen():
-    choice = input("Please, choice:\n1. Male nick.\n2. Female nick.\n3. Nick from random chars.\n4. Exit.\n")
-    if (choice == "4"):
-        exit()
-    limit = int(input("\nHow many nicks you want?\n"))
-    file = ''; i = 1
+    choice = fzf.prompt(["Exit", "Nick from random chars", "Female nick", "Male nick"])[0]
 
-    print('\n')
-    if (choice == "1"):
+    if (choice == "Exit"):
+        exit()
+
+    limit_list = []; index = 1
+    while index < 101:
+        limit_list.append(f"Count: {index}")
+        index += 1
+    limit = int(fzf.prompt(limit_list)[0].replace("Count: ", ""))
+
+    file = ''
+    if (choice == "Male nick"):
         file = 'boy_users.txt'
-    elif (choice == "2"):
+    elif (choice == "Female nick"):
         file = 'girl_users.txt'
 
-    elif (choice == "3"):
-        length = int(input('\nChoice nick length.\n'))
-        while limit >= i:
+    elif (choice == "Nick from random chars"):
+        length_list = []; index = 1
+        while index < 101:
+            length_list.append(f"Length: {index}")
+            index += 1
+        length = int(fzf.prompt(length_list)[0].replace("Length: ", ""))
+
+        #length = int(input('\nChoice nick length.\n'))
+        index = 1
+        while limit >= index:
             nick = RandomNick(length)
-            print(f"{i}. {nick}")
-            i += 1
+            print(f"{index}. {nick}")
+            index += 1
 
     if (file != ''):
         fl = open(file, 'r', encoding='UTF-8')
-        lines = fl.readlines()
-        while limit >= i:
+        lines = fl.readlines(); index = 1
+        while limit >= index:
             nick = random.choice(lines)
-            print(f"{i}. {nick}")
-            i += 1
+            print(f"{index}. {nick}")
+            index += 1
 
-    nigen()
+    #nigen()
 
 print("nigen is loading...\n")
+fzf = FzfPrompt()
 nigen()
